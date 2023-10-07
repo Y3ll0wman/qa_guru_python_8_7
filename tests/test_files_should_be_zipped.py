@@ -3,11 +3,7 @@ from zipfile import ZipFile
 import os
 
 
-def test_files_should_be_zipped():
-    # Создать каталог tmp, если он еще не создан
-    if not os.path.exists(TMP_PATH):
-        os.mkdir(TMP_PATH)
-
+def test_files_should_be_zipped(create_and_delete_tmp):
     # Заархивировать все файлы из каталога resources в /tmp/resources.zip
     with ZipFile(f'{TMP_PATH}/resources.zip', 'x') as myzip:
         # Рекурсивно проходимся по всем файлам и подкаталогам в каталоге resources
