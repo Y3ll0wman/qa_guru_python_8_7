@@ -1,6 +1,5 @@
 import pytest
 import shutil
-
 from utils import *
 
 
@@ -12,4 +11,4 @@ def create_and_delete_tmp():
 
     yield
 
-    shutil.rmtree('../tmp')
+    shutil.rmtree('tmp')
